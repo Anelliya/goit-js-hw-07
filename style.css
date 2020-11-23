@@ -1,0 +1,54 @@
+.gallery {
+  display: flex;
+  margin: 0;
+  padding: 10px;
+  justify-content: center;
+  background-color: bisque;
+  list-style: none;
+  border: 10px solid greenyellow;
+}
+
+.gallery li {
+  border: 5px dotted darkblue;
+}
+
+.gallery:hover {
+  border: 20px solid lightcoral;
+  transition-duration: 2s;
+}
+
+.counter {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 10px;
+  border: 2px solid black;
+}
+
+.input {
+  padding: 30px;
+  border: 2px solid darkslategrey;
+}
+
+div {
+  margin-top: 30px;
+  padding: 10px;
+  border: 5px solid gray;
+}
+
+body {
+  padding: 100px;
+}
+
+#validation-input {
+  margin-top: 50px;
+  display: flex;
+  border: 6px solid #bdbdbd;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+}
