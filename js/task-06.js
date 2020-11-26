@@ -25,22 +25,29 @@
 
 const validationInputRef = document.getElementById("validation-input");
 
+function addValidClacc(el) {
+  el.classList.add("valid");
+}
+
+function removeInvalidClass(el) {
+  el.classList.remove("invalid");
+}
+
+function addInvalidClass(el) {
+  el.classList.add("invalid");
+}
 const checkDataLengh = () => {
-  if (
-    validationInputRef.value.length ===
-    Number.parseInt(validationInputRef.dataset.length)
-  ) {
-    validationInputRef.classList.add("valid");
-    validationInputRef.classList.remove("invalid");
+  const inputDataSetLength = Number.parseInt(validationInputRef.dataset.length);
+  if (validationInputRef.value.length === inputDataSetLength) {
+    addValidClacc(validationInputRef);
+    removeInvalidClass(validationInputRef);
   }
   if (
-    validationInputRef.value.length >
-      Number.parseInt(validationInputRef.dataset.length) ||
-    validationInputRef.value.length <
-      Number.parseInt(validationInputRef.dataset.length)
+    validationInputRef.value.length > inputDataSetLength ||
+    validationInputRef.value.length < inputDataSetLength
   ) {
-    validationInputRef.classList.add("invalid");
+    addInvalidClass(validationInputRef);
   }
 };
 
-validationInputRef.addEventListener("keydown", checkDataLengh);
+validationInputRef.addEventListener("blur", checkDataLengh);
